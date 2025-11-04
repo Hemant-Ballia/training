@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Registration Support</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header section with navigation -->
+    <header>
+        <nav>
+            <div class="logo">LandReg</div>
+            <ul>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#why-us">Why Choose Us</a></li>
+                <li><a href="#agents">Verified Agents</a></li>
+            </ul>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero section: main headline and call to action -->
+        <section class="hero">
+            <h1>Simplifying Land Registration — Get Expert Help Near You</h1>
+            <p>We connect you with verified land registration agents in your area who guide you through the entire process — from document preparation to final registration.</p>
+            <button id="chat-btn">Chat with Our AI Assistant</button>
+        </section>
+
+        <!-- "How It Works" section: explains the process in steps -->
+        <section id="how-it-works">
+            <h2>How It Works</h2>
+            <div class="process-container">
+                <div class="step">
+                    <h3>1. Chat with Our AI Assistant</h3>
+                    <p>Tell us what problem you're facing — whether it's document verification, registration delays, or EC/patta issues.</p>
+                </div>
+                <div class="step">
+                    <h3>2. Get a Call from Our Team</h3>
+                    <p>Our support team will reach out to you directly to understand your issue clearly and confirm the details before assigning an agent.</p>
+                </div>
+                <div class="step">
+                    <h3>3. Book a Verified Agent Near You</h3>
+                    <p>We'll connect you with a verified agent in your locality who will guide you through the complete registration process, keeping you informed at every step.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- "Why Choose Us" section: highlights key benefits -->
+        <section id="why-us">
+            <h2>Why Thousands Trust Us</h2>
+            <ul>
+                <li><strong>AI-Powered Matching:</strong> We instantly match your request with verified local agents.</li>
+                <li><strong>Verified Professionals:</strong> Every agent is identity-checked and approved before joining.</li>
+                <li><strong>Continuous Support:</strong> Our team tracks every case until it's resolved.</li>
+                <li><strong>All-India Reach:</strong> We're expanding across major cities and districts in India.</li>
+            </ul>
+        </section>
+
+        <!-- "Meet Verified Agents" section: placeholder for agent listings -->
+        <section id="agents">
+            <h2>Meet Verified Agents & Brokers Near You</h2>
+            <p>Browse our list of verified agents who volunteer to help people with land buying, selling, and registration.</p>
+            <p>Want your name listed here? <a href="#">Contact us</a></p>
+            <!-- Agent listing will be dynamically added here -->
+        </section>
+
+        <!-- "Get Started" call to action section -->
+        <section class="get-started">
+            <h2>Ready to Register Your Land Hassle-Free?</h2>
+            <p>Talk to our AI assistant now and let's connect you to the right expert.</p>
+            <button id="chat-now-btn">Chat Now</button>
+        </section>
+    </main>
+
+    <!-- Chatbot container -->
+    <div id="chatbot-container" class="hidden">
+        <div id="chatbot-header">
+            <h3>AI Assistant</h3>
+            <button id="close-chat-btn">X</button>
+        </div>
+        <div id="chatbot-messages"></div>
+        <div id="chatbot-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
