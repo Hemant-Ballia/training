@@ -56,13 +56,13 @@ const chatFlow = [
 
 // Function to open the chatbot
 const openChatbot = () => {
-    chatbotContainer.classList.remove('hidden');
+    gsap.fromTo(chatbotContainer, {x: "100%", opacity: 0}, {x: 0, opacity: 1, duration: 0.5, onStart: () => chatbotContainer.classList.remove('hidden')});
     startChat();
 };
 
 // Function to close the chatbot
 const closeChatbot = () => {
-    chatbotContainer.classList.add('hidden');
+    gsap.to(chatbotContainer, {x: "100%", opacity: 0, duration: 0.5, onComplete: () => chatbotContainer.classList.add('hidden')});
 };
 
 // Function to start the chat conversation
@@ -81,6 +81,7 @@ const displayBotMessage = (message) => {
     messageElement.classList.add('bot-message');
     messageElement.innerText = message;
     chatbotMessages.appendChild(messageElement);
+    gsap.from(messageElement, {opacity: 0, y: 20, duration: 0.5});
     chatbotMessages.scrollTop = chatbotMessages.scrollHeight; // Scroll to bottom
 };
 
@@ -90,6 +91,7 @@ const displayUserMessage = (message) => {
     messageElement.classList.add('user-message');
     messageElement.innerText = message;
     chatbotMessages.appendChild(messageElement);
+    gsap.from(messageElement, {opacity: 0, y: 20, duration: 0.5});
     chatbotMessages.scrollTop = chatbotMessages.scrollHeight; // Scroll to bottom
 };
 
@@ -157,6 +159,32 @@ const endChat = () => {
     displayBotMessage("You'll also get updates on WhatsApp or email. Thank you for contacting us — we'll make your land registration easy and stress-free!");
     userInput.disabled = true; // Disable user input
     sendBtn.disabled = true; // Disable send button
+
+    for (let i = 0; i < 100; i++) {
+        createConfetti();
+    }
+};
+
+const createConfetti = () => {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    chatbotContainer.appendChild(confetti);
+
+    gsap.fromTo(confetti, {
+        x: Math.random() * chatbotContainer.offsetWidth,
+        y: -20,
+        scale: Math.random() * 0.5 + 0.5,
+        opacity: 1
+    }, {
+        y: chatbotContainer.offsetHeight + 20,
+        x: '+=Math.random() * 100 - 50',
+        rotation: Math.random() * 360,
+        duration: Math.random() * 2 + 3,
+        ease: "power1.out",
+        onComplete: () => {
+            confetti.remove();
+        }
+    });
 };
 
 // Event listeners for chat buttons and user input
